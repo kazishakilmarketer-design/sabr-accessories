@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SABR Accessories - Premium Textile & Garment Accessories Supplier in Bangladesh. Sewing Thread, Drawstring, Elastic, Zipper & more." />
+  <meta name="author" content="SABR Accessories" />
+  <title>SABR Accessories | Premium Textile & Garment Supplier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --gold: #D4AF37;
+      --gold-light: #F0D060;
+      --gold-dark: #B8960F;
+      --gold-glow: rgba(212, 175, 55, 0.25);
+      --black: #0A0A0A;
+      --black-2: #0E0E0E;
+      --black-3: #141414;
+      --black-4: #1C1C1C;
+      --black-glass: rgba(20, 20, 20, 0.75);
+      --white: #F5F5F5;
+      --text-primary: #F0EFED;
+      --text-secondary: #A8A6A0;
+      --text-muted: #6B6A66;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+      --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-slow: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      --shadow-gold: 0 8px 40px rgba(212, 175, 55, 0.12);
+      --glass: rgba(20, 20, 22, 0.72);
+      --glass-border: rgba(212, 175, 55, 0.08);
+      --radius: 16px;
+      --radius-lg: 24px;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: var(--font-body);
+      background: var(--black);
+      color: var(--text-primary);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--gold); color: var(--black); }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== PRELOADER ===== */
+    #preloader {
+      position: fixed; inset: 0; z-index: 99999;
+      background: var(--black);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 40px;
+      transition: opacity 0.8s, visibility 0.8s;
+    }
+    #preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .loader-ring {
+      width: 70px; height: 70px;
+      border: 2px solid rgba(212, 175, 55, 0.1);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loader-text {
+      font-family: var(--font-display);
+      font-size: 1.2rem; font-weight: 300;
+      color: var(--text-secondary);
+      letter-spacing: 6px;
+      text-transform: uppercase;
+    }
+
+    /* ===== ANIMATED BACKGROUND ===== */
+    .bg-orbs {
+      position: fixed; inset: 0; z-index: 0;
+      overflow: hidden; pointer-events: none;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.3;
+      animation: orbFloat 20s ease-in-out infinite;
+    }
+    .orb:nth-child(1) {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(212,175,55,0.12), transparent);
+      top: -10%; left: -5%;
+      animation-delay: 0s;
+    }
+    .orb:nth-child(2) {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(212,175,55,0.08), transparent);
+      bottom: -5%; right: -5%;
+      animation-delay: -7s;
+    }
+    .orb:nth-child(3) {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(255,255,255,0.03), transparent);
+      top: 40%; left: 50%;
+      animation-delay: -14s;
+    }
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -40px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+    }
+
+    /* ===== GLASS CARD ===== */
+    .glass {
+      background: var(--glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+      padding: 20px 0;
+      transition: var(--transition);
+    }
+    .navbar.scrolled {
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.06);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      transition: var(--transition);
+    }
+    .nav-logo img { height: 42px; width: auto; border-radius: 8px; }
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-weight: 700; font-size: 1.3rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+    .nav-logo-text span { color: var(--text-primary); font-weight: 300; }
+
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .nav-links a {
+      padding: 8px 16px;
+      font-size: 0.8rem; font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 8px;
+      transition: var(--transition);
+      position: relative;
+    }
+    .nav-links a:hover {
+      color: var(--gold);
+      background: rgba(212, 175, 55, 0.06);
+    }
+    .nav-links a.nav-cta {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+      font-weight: 600;
+      padding: 8px 20px;
+    }
+    .nav-links a.nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
+      background: none;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none; border: none; color: var(--gold);
+      font-size: 1.5rem; cursor: pointer;
+      padding: 8px; z-index: 10000;
+    }
+    @media (max-width: 968px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        position: fixed; top: 0; right: -100%; width: 300px;
+        height: 100vh;
+        background: rgba(14, 14, 14, 0.97);
+        backdrop-filter: blur(30px);
+        flex-direction: column; justify-content: center; gap: 4px;
+        padding: 80px 32px;
+        transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        border-left: 1px solid rgba(212, 175, 55, 0.06);
+      }
+      .nav-links.open { right: 0; }
+      .nav-links a { font-size: 0.9rem; padding: 12px 16px; }
+      .nav-links a.nav-cta { margin-top: 12px; }
+    }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 120px 0; position: relative; z-index: 1; }
+    .section-tag {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.75rem; font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 4px; text-transform: uppercase;
+      padding: 6px 16px;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+    .text-center { text-align: center; }
+    .text-center .section-subtitle { margin: 0 auto; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      position: relative; z-index: 1;
+      padding: 140px 0 100px;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(212,175,55,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(212,175,55,0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.015) 0%, transparent 40%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .hero-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+      padding: 10px 24px 10px 20px;
+      background: rgba(20,20,22,0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212,175,55,0.1);
+      border-radius: 100px;
+    }
+    .hero-brand img {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .hero-brand-text {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: var(--gold);
+    }
+    .hero-brand-text span { color: var(--text-secondary); font-weight: 300; }
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.08;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+    .hero-title .gold-text {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: italic;
+    }
+    .hero-tagline {
+      font-family: var(--font-heading);
+      font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+      font-weight: 400;
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .hero-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+      padding: 6px 16px;
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 100px;
+    }
+    .hero-location i { color: var(--gold); font-size: 0.7rem; }
+    .hero-buttons {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      justify-content: center;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 28px;
+      font-family: var(--font-display);
+      font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+    }
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(212, 175, 55, 0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .btn-outline:hover {
+      background: rgba(212, 175, 55, 0.06);
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25D366, #1DA851);
+      color: #fff;
+    }
+    .btn-whatsapp:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(37, 211, 102, 0.3);
+    }
+    .btn-white {
+      background: var(--white);
+      color: var(--black);
+    }
+    .btn-white:hover { transform: translateY(-3px); }
+
+    /* ===== ABOUT ===== */
+    .about { background: var(--black-2); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .about-image {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      height: 480px;
+      background: linear-gradient(135deg, var(--black-3), var(--black-4));
+      border: 1px solid rgba(212, 175, 55, 0.06);
+    }
+    .about-image img {
+      width: 100%; height: 100%; object-fit: cover;
+      opacity: 0.7;
+    }
+    .about-text h3 {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      line-height: 1.9;
+    }
+    .about-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin-top: 32px;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 24px 16px;
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.06);
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+    .stat-item:hover {
+      border-color: rgba(212, 175, 55, 0.15);
+      transform: translateY(-4px);
+    }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2.4rem; font-weight: 700;
+      color: var(--gold);
+    }
+    .stat-label {
+      font-size: 0.75rem; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    /* ===== MVV ===== */
+    .mvv-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px; margin-top: 60px;
+    }
+    .mvv-card {
+      background: var(--glass);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.06);
+      border-radius: var(--radius);
+      padding: 40px 28px;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .mvv-card:hover {
+      border-color: rgba(212, 175, 55, 0.18);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-gold);
+    }
+    .mvv-icon {
+      width: 64px; height: 64px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.04));
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; color: var(--gold);
+      transition: var(--transition);
+    }
+    .mvv-card:hover .mvv-icon {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.08));
+      transform: scale(1.05);
+    }
+    .mvv-card h4 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .mvv-card p {
+      font-size: 0.9rem; color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===== PRODUCTS ===== */
+    .products { background: var(--black-3); }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 50px;
+    }
+    .product-card {
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.06);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .product-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .product-card:hover::before { opacity: 1; }
+    .product-card:hover {
+      border-color: rgba(212, 175, 55, 0.15);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-gold);
+    }
+    .product-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.03));
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .product-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .product-card p {
+      font-size: 0.88rem; color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .product-badge {
+      display: inline-block;
+      font-size: 0.7rem; font-weight: 600;
+      color: var(--gold-dark);
+      background: rgba(212, 175, 55, 0.1);
+      padding: 3px 10px;
+      border-radius: 100px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== WHY CHOOSE US ===== */
+    .why-choose { background: var(--black-2); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 50px;
+    }
+    .why-card {
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.06);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      transition: var(--transition);
+      text-align: center;
+    }
+    .why-card:hover {
+      border-color: rgba(212, 175, 55, 0.15);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-gold);
+    }
+    .why-icon {
+      width: 56px; height: 56px;
+      margin: 0 auto 16px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.04));
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; color: var(--gold);
+    }
+    .why-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .why-card p {
+      font-size: 0.88rem; color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 50px;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 240px;
+      background: var(--black-3);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: var(--transition-slow);
+    }
+    .gallery-item:hover img { transform: scale(1.1); }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+      display: flex; align-items: flex-end;
+      padding: 20px;
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay span {
+      font-size: 0.85rem; color: var(--gold);
+      font-weight: 500;
+      letter-spacing: 1px;
+      font-family: var(--font-display);
+    }
+
+    /* ===== QUOTE FORM ===== */
+    .quote-section { background: var(--black-3); }
+    .quote-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: start;
+      margin-top: 50px;
+    }
+    .quote-info h3 {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .quote-info p {
+      font-size: 0.95rem; color: var(--text-secondary);
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+    .quote-form {
+      background: var(--glass);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+    }
+    .form-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 0.75rem; font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      transition: var(--transition);
+      outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: rgba(212, 175, 55, 0.3);
+      background: rgba(212, 175, 55, 0.03);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.05);
+    }
+    .form-group textarea { height: 100px; resize: vertical; }
+    .form-group select option { background: var(--black-3); color: var(--text-primary); }
+
+    /* ===== CONTACT ===== */
+    .contact { background: var(--black-2); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 50px;
+    }
+    .contact-card {
+      background: var(--glass);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.06);
+      border-radius: var(--radius);
+      padding: 40px;
+    }
+    .contact-detail {
+      display: flex; align-items: center; gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .contact-detail:last-child { border-bottom: none; }
+    .contact-detail i {
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(212, 175, 55, 0.08);
+      border-radius: 12px;
+      color: var(--gold);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-detail h4 {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+    .contact-detail p, .contact-detail a {
+      font-size: 0.9rem; color: var(--text-primary);
+    }
+    .contact-detail a:hover { color: var(--gold); }
+    .contact-map {
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 100%;
+      min-height: 400px;
+      border: 1px solid rgba(212, 175, 55, 0.06);
+    }
+    .contact-map iframe {
+      width: 100%; height: 100%;
+      min-height: 400px;
+      border: none;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--black-3);
+      border-top: 1px solid rgba(212, 175, 55, 0.04);
+      padding: 60px 0 0;
+      position: relative; z-index: 1;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .footer-brand {
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .footer-brand .logo-row {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .footer-brand .logo-row img { height: 40px; width: auto; border-radius: 6px; }
+    .footer-brand .logo-row h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+    .footer-brand .logo-row h3 span { color: var(--text-primary); font-weight: 300; }
+    .footer-brand p {
+      font-size: 0.88rem; color: var(--text-secondary);
+      line-height: 1.8;
+      max-width: 300px;
+    }
+    .footer h4 {
+      font-family: var(--font-display);
+      font-size: 0.85rem; font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a {
+      font-size: 0.88rem; color: var(--text-muted);
+      transition: var(--transition);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .footer-links a:hover {
+      color: var(--gold);
+      padding-left: 4px;
+    }
+    .footer-contact li {
+      display: flex; gap: 12px;
+      margin-bottom: 14px;
+      font-size: 0.88rem; color: var(--text-secondary);
+    }
+    .footer-contact i {
+      color: var(--gold);
+      width: 16px; text-align: center;
+      margin-top: 4px;
+    }
+    .footer-bottom {
+      padding: 24px 0;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p {
+      font-size: 0.82rem; color: var(--text-muted);
+    }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a {
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.03);
+      border-radius: 10px;
+      color: var(--text-muted);
+      transition: var(--transition);
+      font-size: 0.9rem;
+    }
+    .footer-social a:hover {
+      background: var(--gold);
+      color: var(--black);
+      transform: translateY(-2px);
+    }
+
+    /* ===== FLOATING WHATSAPP ===== */
+    .whatsapp-float {
+      position: fixed; bottom: 28px; right: 28px;
+      z-index: 9998;
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, #25D366, #1DA851);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 1.5rem;
+      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.3);
+      transition: var(--transition);
+      animation: pulseWA 3s ease-in-out infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1) translateY(-3px);
+      box-shadow: 0 12px 48px rgba(37, 211, 102, 0.4);
+    }
+    @keyframes pulseWA {
+      0%, 100% { box-shadow: 0 8px 32px rgba(37, 211, 102, 0.3); }
+      50% { box-shadow: 0 8px 48px rgba(37, 211, 102, 0.5); }
+    }
+
+    /* ===== BACK TO TOP ===== */
+    .back-to-top {
+      position: fixed; bottom: 28px; left: 28px;
+      z-index: 9998;
+      width: 44px; height: 44px;
+      background: var(--gold);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--black);
+      font-size: 1rem;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+      opacity: 0; visibility: hidden;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; }
+    .back-to-top:hover { transform: translateY(-3px); }
+
+    /* ===== PRODUCT MODAL ===== */
+    .product-modal {
+      position: fixed; inset: 0; z-index: 99998;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(20px);
+      display: none; align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .product-modal.active { display: flex; }
+    .modal-content {
+      background: rgba(20, 20, 22, 0.95);
+      backdrop-filter: blur(30px);
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      border-radius: var(--radius-lg);
+      max-width: 560px; width: 100%;
+      padding: 40px;
+      position: relative;
+      max-height: 90vh; overflow-y: auto;
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 20px;
+      background: none; border: none;
+      color: var(--text-secondary);
+      font-size: 1.8rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .modal-close:hover { color: var(--gold); transform: rotate(90deg); }
+    .modal-content h2 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .modal-content .gold-line {
+      width: 50px; height: 2px;
+      background: var(--gold);
+      margin-bottom: 16px;
+    }
+    .modal-content p {
+      font-size: 0.9rem; color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .modal-specs { margin-bottom: 20px; }
+    .modal-spec {
+      display: flex; justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 0.88rem;
+    }
+    .modal-spec strong { color: var(--text-primary); font-weight: 500; }
+    .modal-spec span { color: var(--text-muted); }
+    .modal-colors {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .modal-color {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      border: 2px solid rgba(255,255,255,0.05);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .modal-color:hover { transform: scale(1.15); }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 99999;
+      background: rgba(0,0,0,0.95);
+      backdrop-filter: blur(20px);
+      display: none; align-items: center; justify-content: center;
+      padding: 40px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw; max-height: 90vh;
+      border-radius: var(--radius);
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 30px;
+      font-size: 2rem; color: #fff;
+      cursor: pointer; background: none; border: none;
+      transition: var(--transition);
+    }
+    .lightbox-close:hover { color: var(--gold); }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--black-2); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      section { padding: 80px 0; }
+      .about-grid, .quote-grid, .contact-grid { grid-template-columns: 1fr; }
+      .mvv-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== PRELOADER ===== -->
+<div id="preloader">
+  <div class="loader-ring"></div>
+  <div class="loader-text">SABR</div>
+</div>
+
+<!-- ===== ANIMATED BACKGROUND ORBS ===== -->
+<div class="bg-orbs">
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="nav-logo">
+      <img src="sabr_logo_nav.png" alt="SABR Accessories" />
+      <span class="nav-logo-text">SABR <span>Accessories</span></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#products" class="nav-link">Products</a>
+      <a href="#why" class="nav-link">Why Us</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#quote" class="nav-link">Quote</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="https://wa.me/8801949412311" target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+      <div class="hero-brand">
+        <img src="sabr_logo_nav.png" alt="SABR" />
+        <span class="hero-brand-text">SABR <span>Accessories</span></span>
+      </div>
+      <div class="hero-title">
+        Premium Textile<br>
+        <span class="gold-text">&amp; Garment Accessories</span>
+      </div>
+      <p class="hero-tagline">— Serving the global garment industry with excellence —</p>
+      <div class="hero-location">
+        <i class="fas fa-map-pin"></i> Dhaka, Bangladesh
+      </div>
+      <div class="hero-buttons">
+        <a href="#products" class="btn btn-gold"><i class="fas fa-th-large"></i> View Products</a>
+        <a href="#quote" class="btn btn-outline"><i class="fas fa-file-invoice"></i> Request Quote</a>
+        <a href="https://wa.me/8801949412311" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image" data-aos="fade-right" data-aos-duration="800">
+        <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80" alt="SABR Accessories" />
+      </div>
+      <div class="about-text" data-aos="fade-left" data-aos-duration="800">
+        <span class="section-tag">About Us</span>
+        <h3>Your Trusted Partner in Textile Accessories</h3>
+        <p>Welcome to SABR Accessories, a premier supplier of garment and textile accessories based in Dhaka, Bangladesh. With deep industry expertise and a commitment to quality, we serve garment factories, buying houses, and exporters worldwide.</p>
+        <p>From sewing threads to packaging solutions, we provide everything you need to keep your production running smoothly — at competitive prices with reliable delivery.</p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-number" data-count="150">0</div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="500">0</div>
+            <div class="stat-label">Products Delivered</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="15">0</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mvv-grid">
+      <div class="mvv-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="mvv-icon"><i class="fas fa-bullseye"></i></div>
+        <h4>Our Mission</h4>
+        <p>To deliver high-quality garment accessories at competitive prices, ensuring timely delivery and exceptional service to every client.</p>
+      </div>
+      <div class="mvv-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="mvv-icon"><i class="fas fa-eye"></i></div>
+        <h4>Our Vision</h4>
+        <p>To become Bangladesh's most trusted textile accessories partner — known for quality, reliability, and innovation.</p>
+      </div>
+      <div class="mvv-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="mvv-icon"><i class="fas fa-heart"></i></div>
+        <h4>Our Values</h4>
+        <p>Integrity, quality craftsmanship, customer-first approach, and continuous improvement in everything we do.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-tag">Products</span>
+      <h2 class="section-title">Our Product Range</h2>
+      <p class="section-subtitle">Comprehensive range of garment accessories — from threads to packaging — with flexible MOQs and fast lead times.</p>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section class="why-choose" id="why">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-tag">Why SABR</span>
+      <h2 class="section-title">Trust &amp; Reliability</h2>
+      <p class="section-subtitle">Built on decades of experience serving the garment industry with excellence.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="why-icon"><i class="fas fa-bolt"></i></div>
+        <h4>Fast Response</h4>
+        <p>We respond to every inquiry within 24 hours with detailed quotations and product availability.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="why-icon"><i class="fas fa-certificate"></i></div>
+        <h4>Premium Quality</h4>
+        <p>All products undergo strict quality checks to ensure they meet international garment industry standards.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="why-icon"><i class="fas fa-handshake"></i></div>
+        <h4>Reliable Partner</h4>
+        <p>Consistent delivery, transparent pricing, and a commitment to long-term client relationships.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="why-icon"><i class="fas fa-globe"></i></div>
+        <h4>Global Reach</h4>
+        <p>Serving garment factories, buying houses, and exporters across multiple countries from Bangladesh.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="why-icon"><i class="fas fa-tag"></i></div>
+        <h4>Competitive Pricing</h4>
+        <p>Factory-direct pricing with flexible MOQs makes us the ideal partner for businesses of all sizes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="about" id="gallery">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-tag">Gallery</span>
+      <h2 class="section-title">Our Work</h2>
+      <p class="section-subtitle">A glimpse into our products, production, and quality standards.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ===== QUOTE ===== -->
+<section class="quote-section" id="quote">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-tag">Get a Quote</span>
+      <h2 class="section-title">Request a Quote</h2>
+      <p class="section-subtitle">Tell us what you need and we'll get back to you within 24 hours with a detailed quotation.</p>
+    </div>
+    <div class="quote-grid">
+      <div class="quote-info" data-aos="fade-right">
+        <h3>How It Works</h3>
+        <p>Fill out the form with your requirements — product type, quantity, and any specific details. We'll review and send you a comprehensive quotation within one business day.</p>
+        <p>For urgent inquiries, contact us directly on WhatsApp for a faster response.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://wa.me/8801949412311" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+          <a href="mailto:Tarekazizbulbul114@gmail.com" class="btn btn-outline"><i class="far fa-envelope"></i> Send Email</a>
+        </div>
+      </div>
+      <div class="quote-form" data-aos="fade-left">
+        <form id="quoteForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" name="name" required placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label>Company</label>
+              <input type="text" name="company" placeholder="Company name" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone *</label>
+              <input type="tel" name="phone" required placeholder="Your phone number" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="your@email.com" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Product *</label>
+              <select name="product" required id="qProduct">
+                <option value="">Select product...</option>
+                <option>Sewing Thread (Baby Cone)</option>
+                <option>Drawstring</option>
+                <option>Elastic Band</option>
+                <option>Drawcord</option>
+                <option>Twill Tape</option>
+                <option>Buttons</option>
+                <option>Zipper</option>
+                <option>Leather Patch</option>
+                <option>Stopper / Cord Lock</option>
+                <option>Hang Tag</option>
+                <option>Main & Care Labels</option>
+                <option>Poly & Shopping Bag</option>
+                <option>Denim Hook & Snap</option>
+                <option>Carton Box</option>
+                <option>Ladies Items</option>
+                <option>T-Shirts</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Quantity</label>
+              <input type="text" name="quantity" placeholder="e.g. 500 pcs" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Message / Details</label>
+            <textarea name="message" placeholder="Tell us about your requirements..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;">
+            <i class="fab fa-whatsapp"></i> Send via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-tag">Contact</span>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">We're here to help with your garment accessory needs.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card" data-aos="fade-right">
+        <div class="contact-detail">
+          <i class="fas fa-user"></i>
+          <div>
+            <h4>Owner</h4>
+            <p>Tarek Aziz Bulbul</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <i class="fab fa-whatsapp"></i>
+          <div>
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/8801949412311" target="_blank">+880 1949-412311</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <i class="far fa-envelope"></i>
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:Tarekazizbulbul114@gmail.com">Tarekazizbulbul114@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h4>Office</h4>
+            <p>Jonaki Road, Mirpur-1, Dhaka, Bangladesh</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:20px;">
+          <a href="https://wa.me/8801949412311" target="_blank" class="btn btn-whatsapp" style="flex:1;justify-content:center;">
+            <i class="fab fa-whatsapp"></i> Chat
+          </a>
+          <a href="mailto:Tarekazizbulbul114@gmail.com" class="btn btn-outline" style="flex:1;justify-content:center;">
+            <i class="far fa-envelope"></i> Email
+          </a>
+        </div>
+      </div>
+      <div class="contact-map" data-aos="fade-left">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.056912345678!2d90.3567!3d23.7925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1f1e1e1e1e1%3A0x0!2sMirpur-1%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1" allowfullscreen loading="lazy" title="SABR Accessories Location"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-row">
+          <img src="sabr_logo_nav.png" alt="SABR" />
+          <h3>SABR <span>Accessories</span></h3>
+        </div>
+        <p>Premium textile &amp; garment accessories supplier based in Dhaka, Bangladesh. Committed to quality, reliability, and customer satisfaction.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#quote">Request Quote</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul class="footer-links">
+          <li><a href="#products">Sewing Thread</a></li>
+          <li><a href="#products">Drawstring</a></li>
+          <li><a href="#products">Elastic Band</a></li>
+          <li><a href="#products">Buttons & Zipper</a></li>
+          <li><a href="#products">Labels & Tags</a></li>
+          <li><a href="#products">Packaging</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Info</h4>
+        <ul class="footer-contact">
+          <li><i class="fas fa-map-marker-alt"></i> Mirpur-1, Dhaka, Bangladesh</li>
+          <li><i class="fab fa-whatsapp"></i> +880 1949-412311</li>
+          <li><i class="far fa-envelope"></i> Tarekazizbulbul114@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 <strong>SABR Accessories</strong>. All Rights Reserved.</p>
+      <div class="footer-social">
+        <a href="https://wa.me/8801949412311" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:Tarekazizbulbul114@gmail.com" aria-label="Email"><i class="far fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING WHATSAPP ===== -->
+<a href="https://wa.me/8801949412311" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<!-- ===== BACK TO TOP ===== -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+<!-- ===== MODALS ===== -->
+<div class="product-modal" id="productModal">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <h2 id="modalTitle">Product Name</h2>
+    <div class="gold-line"></div>
+    <p id="modalDesc">Description</p>
+    <div class="modal-specs" id="modalSpecs"></div>
+    <h4 style="font-family:var(--font-display);font-size:0.85rem;color:var(--text-primary);margin-bottom:10px;">Available Colors</h4>
+    <div class="modal-colors" id="modalColors"></div>
+    <a href="#quote" id="modalInquiryBtn" class="btn btn-gold" style="justify-content:center;width:100%;margin-top:8px;">
+      <i class="fas fa-file-invoice"></i> Request Quote
+    </a>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImage" src="" alt="Gallery view" />
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  const products = [
+      {
+        name: 'Sewing Thread (Baby Cone)',
+        desc: 'High-quality sewing thread in baby cone format, ideal for garment manufacturing. Available in a wide range of colors with consistent tensile strength and smooth finish.',
+        icon: 'fa-solid fa-thread',
+        specs: [
+          { label: 'Material', value: '100% Polyester / Cotton' },
+          { label: 'Cone Size', value: 'Baby Cone (1 lb / 450g)' },
+          { label: 'MOQ', value: '300 pcs' },
+          { label: 'Lead Time (Sample)', value: '7 Days' },
+          { label: 'Lead Time (Bulk)', value: '20-30 Days' },
+          { label: 'Sample Charge', value: '2,000 TK' }
+        ],
+        colors: ['#FFFFFF', '#000000', '#D4AF37', '#CC0000', '#0044CC', '#2E7D32', '#F57C00', '#8E24AA']
+      },
+      {
+        name: 'Drawstring',
+        desc: 'Durable drawstrings available in multiple materials, colors, and thicknesses. Perfect for hoodies, trousers, sportswear, and various garment applications.',
+        icon: 'fa-solid fa-chart-line',
+        specs: [
+          { label: 'Material', value: 'Cotton / Polyester / Nylon' },
+          { label: 'Length', value: 'Custom (50cm – 200cm)' },
+          { label: 'Width', value: '3mm – 12mm' },
+          { label: 'MOQ', value: '500 pcs' },
+          { label: 'Lead Time (Bulk)', value: '20-30 Days' },
+          { label: 'Sample Charge', value: '2,000 TK' }
+        ],
+        colors: ['#FFFFFF', '#000000', '#333333', '#8B4513', '#2E7D32', '#1565C0', '#C62828', '#F5F5F5']
+      },
+      {
+        name: 'Elastic Band',
+        desc: 'High-quality elastic bands suitable for waistbands, cuffs, sportswear, and lingerie. Consistent stretch and recovery with durable construction.',
+        icon: 'fa-solid fa-rotate',
+        specs: [
+          { label: 'Material', value: 'Rubber / Spandex / Polyester' },
+          { label: 'Width', value: '1cm – 10cm' },
+          { label: 'MOQ', value: '1,000 Yards' },
+          { label: 'Lead Time (Bulk)', value: '20-30 Days' },
+          { label: 'Sample Charge', value: '2,000 TK' }
+        ],
+        colors: ['#000000', '#FFFFFF', '#333333', '#8B4513', '#2E7D32', '#1565C0', '#C62828']
+      },
+      {
+        name: 'Drawcord',
+        desc: 'Premium quality drawcords with durable tips. Ideal for activewear, outerwear, and casual garments requiring reliable cord closure.',
+        icon: 'fa-solid fa-link',
+        specs: [
+          { label: 'Material', value: 'Polyester / Cotton / Nylon' },
+          { label: 'Length', value: 'Custom (up to 200cm)' },
+          { label: 'MOQ', value: '1,000 Yards' },
+          { label: 'Lead Time (Bulk)', value: '20-30 Days' },
+          { label: 'Sample Charge', value: '2,000 TK' }
+        ],
+        colors: ['#FFFFFF', '#000000', '#333333', '#8B4513', '#2E7D32', '#1565C0', '#C62828']
+      },
+      {
+        name: 'Twill Tape',
+        desc: 'Strong and durable twill tapes ideal for reinforcement, binding, and decorative applications in garment manufacturing.',
+        icon: 'fa-solid fa-ruler',
+        specs: [
+          { label: 'Material', value: 'Cotton / Polyester / Blends' },
+          { label: 'Width', value: '1cm – 5cm' },
+          { label: 'MOQ', value: '1,000 Yards' },
+          { label: 'Lead Time (Bulk)', value: '20-30 Days' },
+          { label: 'Sample Charge', value: '2,000 TK' }
+        ],
+        colors: ['#000000', '#FFFFFF', '#333333', '#8B4513', '#2E7D32', '#1565C0', '#C62828', '#F5F5F5']
+      },
+      {
+        name: 'Buttons',
+        desc: 'Wide selection of buttons in various sizes, materials, and finishes. From classic shirt buttons to decorative fashion buttons.',
+        icon: 'fa-solid fa-circle',
+        specs: [
+          { label: 'Sizes', value: '10 GG = 17,240 PCS / kg' },
+          { label: 'Materials', value: 'Polyester / Resin / Metal / Wood / Shell' },
+          { label: 'MOQ', value: '10 GG' },
+          { label: 'Lead Time (Bulk)', value: '20-30 Days' },
+          { label: 'Sample Charge', value: '2,000 TK' }
+        ],
+        colors: ['#FFFFFF', '#000000', '#D4AF37', '#CC0000', '#0044CC', '#2E7D32', '#F57C00', '#8E24AA', '#F5F5F5']
+      },
+      {
+        name: 'Zipper',
+        desc: 'High-quality zippers in nylon, metal, and plastic varieties. Smooth operation and durable construction for all garment types.',
+        icon: 'fa-solid fa-grip-lines',
+        specs: [
+          { label: 'Types', value: 'Nylon / Metal / Plastic / Invisible' },
+          { label: 'Lengths', value: 'Custom (3cm – 100cm)' },
+          { label: 'MOQ', value: '500 PCS' },
+          { label: 'Lead Time (Bulk)', value: '20-30 Days' },
+          { label: 'Sample Charge', value: '2,000 TK' }
+        ],
+        colors: ['#000000', '#FFFFFF', '#D4AF37', '#CC0000', '#0044CC', '#2E7D32', '#F57C00', '#8E24AA', '#F5F5F5']
+      },
+      {
+        name: 'Leather Patch',
+        desc: 'Premium leather patches for denim, jackets, and fashion garments. Custom embossing and color options available.',
+        icon: 'fa-solid fa-tag',
+        specs: [
+          { label: 'Material', value: 'Genuine Leather / PU Leather' },
+          { label: 'Finishing', value: 'Embossed / Printed / Woven' },
+          { label: 'MOQ', value: '500 PCS' },
+          { label: 'Lead Time (Bulk)', value: '20 Days' },
+          { label: 'Sample Charge', value: '2,000 TK' }
+        ],
+        colors: ['#8B4513', '#000000', '#5D4037', '#3E2723', '#6D4C41', '#A1887F', '#D7CCC8', '#FFFFFF']
+      },
+      {
+        name: 'Stopper / Cord Lock',
+        desc: 'Durable cord locks and stoppers for drawstrings, bags, and sportswear. Available in various sizes and colors.',
+        icon: 'fa-solid fa-lock',
+        specs: [
+          { label: 'Types', value: 'Spring / Cam / Toggle / Barrel' },
+          { label: 'Materials', value: 'Plastic / Metal / Nylon' },
+          { label: 'MOQ', value: '1,000 PCS' },
+          { label: 'Lead Time (Bulk)', value: '20 Days' },
+          { label: 'Sample Charge', value: '2,000 TK' }
+        ],
+        colors: ['#000000', '#333333', '#FFFFFF', '#CC0000', '#0044CC', '#2E7D32', '#F57C00', '#8E24AA']
+      },
+      {
+        name: 'Hang Tag',
+        desc: 'Custom printed hang tags with premium finishes. Designed to enhance brand presentation with various paper stocks and printing options.',
+        icon: 'fa-solid fa-tags',
+        specs: [
+          { label: 'Materials', value: 'Art Card / Kraft / Specialty Paper' },
+          { label: 'Finishing', value: 'Matte Lamination / Glossy / Embossing / Foil' },
+          { label: 'MOQ', value: '1,000 PCS' },
+          { label: 'Lead Time (Bulk)', value: '20 Days' },
+          { label: 'Sample Charge', value: '2,000 TK' }
+        ],
+        colors: ['#FFFFFF', '#000000', '#D4AF37', '#CC0000', '#0044CC', '#2E7D32', '#F57C00', '#F5F5F5']
+      },
+      {
+        name: 'Main & Care Labels',
+        desc: 'Woven and printed labels for branding, care instructions, and size identification. High-quality finish with precise detail.',
+        icon: 'fa-solid fa-barcode',
+        specs: [
+          { label: 'Types', value: 'Woven / Printed / Satin / Heat Transfer' },
+          { label: 'Customization', value: 'Logo, Care Symbols, Size, Brand Name' },
+          { label: 'MOQ', value: '1,000 PCS' },
+          { label: 'Lead Time (Bulk)', value: '20 Days' },
+          { label: 'Sample Charge', value: '2,000 TK' }
+        ],
+        colors: ['#FFFFFF', '#000000', '#D4AF37', '#CC0000', '#0044CC', '#F5F5F5', '#8E24AA']
+      },
+      {
+        name: 'Poly & Shopping Bag',
+        desc: 'Custom poly bags and shopping bags for garment packaging. Available in various thicknesses, sizes, and print options.',
+        icon: 'fa-solid fa-shopping-bag',
+        specs: [
+          { label: 'Types', value: 'Poly Bag / PP Bag / Non-Woven / Paper Bag' },
+          { label: 'Printing', value: 'CMYK / Spot Color / No Print' },
+          { label: 'MOQ', value: '500 PCS' },
+          { label: 'Lead Time (Bulk)', value: '20 Days' },
+          { label: 'Sample Charge', value: '2,000 TK' }
+        ],
+        colors: ['#FFFFFF', '#000000', '#F5F5F5', '#333333', '#D4AF37', '#CC0000', '#0044CC']
+      },
+      {
+        name: 'Denim Hook & Snap',
+        desc: 'Rugged hooks and snap fasteners for denim and heavy-duty garments. Reliable closure solutions with durable metal construction.',
+        icon: 'fa-solid fa-clip',
+        specs: [
+          { label: 'Types', value: 'Hook & Eye / Snap Button / Rivet / Burr' },
+          { label: 'Materials', value: 'Brass / Steel / Zinc Alloy / Copper' },
+          { label: 'MOQ', value: '1,000 PCS' },
+          { label: 'Lead Time (Bulk)', value: '20 Days' },
+          { label: 'Sample Charge', value: '2,000 TK' }
+        ],
+        colors: ['#8B4513', '#000000', '#D4AF37', '#CC0000', '#333333', '#8E24AA', '#1565C0']
+      },
+      {
+        name: 'Carton Box',
+        desc: 'Sturdy corrugated carton boxes for garment packaging and export. Custom sizes with printing options for branding.',
+        icon: 'fa-solid fa-box',
+        specs: [
+          { label: 'Materials', value: 'Corrugated Board (3/5/7 Ply)' },
+          { label: 'Customization', value: 'Custom Size / Printing / Lamination' },
+          { label: 'MOQ', value: '200 PCS' },
+          { label: 'Lead Time (Sample)', value: '5 Days' },
+          { label: 'Lead Time (Bulk)', value: '20 Days' },
+          { label: 'Sample Charge', value: '2,000 TK' }
+        ],
+        colors: ['#8B4513', '#C8A96E', '#F5F5F0', '#FFFFFF', '#000000', '#333333']
+      }
+  ];
+
+  const galleryItems = [
+    { src: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400&q=80', label: 'Textile Materials' },
+    { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80', label: 'Garment Production' },
+    { src: 'https://images.unsplash.com/photo-1588099768531-a72d4a198538?w=400&q=80', label: 'Sewing Threads' },
+    { src: 'https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=400&q=80', label: 'Denim Collection' },
+    { src: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80', label: 'Fashion Accessories' },
+    { src: 'https://images.unsplash.com/photo-1604176354204-9268737828e4?w=400&q=80', label: 'T-Shirts & Apparel' },
+    { src: 'https://images.unsplash.com/photo-1620799140188-3d0a0e01c59d?w=400&q=80', label: 'Drawstrings Details' },
+    { src: 'https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=400&q=80', label: 'Ladies Fashion' },
+    { src: 'https://images.unsplash.com/photo-1571942874998-e36adb0eb334?w=400&q=80', label: 'Quality Control' },
+  ];
+
+  function renderProducts() {
+    const grid = document.getElementById('productsGrid');
+    grid.innerHTML = products.map((p, i) => `
+      <div class="product-card" data-aos="fade-up" data-aos-delay="${i * 60}" onclick="openModal(${i})">
+        <div class="product-icon"><i class="${p.icon}"></i></div>
+        <h3>${p.name}</h3>
+        <p>${p.desc.slice(0, 85)}...</p>
+        <span class="product-badge"><i class="fas fa-cube"></i> MOQ: ${p.specs.find(s => s.label === 'MOQ')?.value || 'Contact Us'}</span>
+      </div>
+    `).join('');
+  }
+
+  function renderGallery() {
+    const grid = document.getElementById('galleryGrid');
+    grid.innerHTML = galleryItems.map((item, i) => `
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="${i * 60}" onclick="openLightbox('${item.src}')">
+        <img src="${item.src}" alt="${item.label}" loading="lazy" />
+        <div class="gallery-overlay"><span>${item.label}</span></div>
+      </div>
+    `).join('');
+  }
+
+  function openModal(index) {
+    const p = products[index];
+    document.getElementById('modalTitle').textContent = p.name;
+    document.getElementById('modalDesc').textContent = p.desc;
+    document.getElementById('modalSpecs').innerHTML = p.specs.map(s =>
+      '<div class="modal-spec"><strong>' + s.label + '</strong><span>' + s.value + '</span></div>'
+    ).join('');
+    document.getElementById('modalColors').innerHTML = p.colors.map(c =>
+      '<div class="modal-color" style="background:' + c + ';' + (c === '#FFFFFF' ? 'border-color:#555;' : '') + '" title="' + c + '"></div>'
+    ).join('');
+    document.getElementById('modalInquiryBtn').href = '#quote?product=' + encodeURIComponent(p.name);
+    document.getElementById('productModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  document.getElementById('modalClose').addEventListener('click', () => {
+    document.getElementById('productModal').classList.remove('active');
+    document.body.style.overflow = '';
+  });
+  document.getElementById('productModal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('productModal')) {
+      document.getElementById('productModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  function openLightbox(src) {
+    document.getElementById('lightboxImage').src = src;
+    document.getElementById('lightbox').classList.add('active');
+  }
+  document.getElementById('lightboxClose').addEventListener('click', () => {
+    document.getElementById('lightbox').classList.remove('active');
+  });
+  document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('lightbox')) {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  });
+
+  // Navbar
+  const navbar = document.getElementById('navbar');
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 500);
+  });
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    navToggle.innerHTML = navLinks.classList.contains('open')
+      ? '<i class="fas fa-times"></i>'
+      : '<i class="fas fa-bars"></i>';
+  });
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+  });
+  document.getElementById('backToTop').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Counters
+  function animateCounters() {
+    document.querySelectorAll('.stat-number[data-count]').forEach(el => {
+      const target = parseInt(el.dataset.count);
+      const increment = Math.ceil(target / 60);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) { current = target; clearInterval(timer); }
+        el.textContent = current + (target >= 1000 ? '+' : '+');
+      }, 25);
+    });
+  }
+
+  // Quote Form
+  const waNum = "8801949412311";
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const data = {
+      name: this.name.value,
+      company: this.company.value,
+      phone: this.phone.value,
+      email: this.email.value,
+      product: this.product.value,
+      quantity: this.quantity.value,
+      message: this.message.value
+    };
+    const waMsg = encodeURIComponent(
+      '*New Quote Request — SABR Accessories*\n\n' +
+      '*Name:* ' + data.name + '\n' +
+      '*Company:* ' + (data.company || 'N/A') + '\n' +
+      '*Phone:* ' + data.phone + '\n' +
+      '*Email:* ' + (data.email || 'N/A') + '\n' +
+      '*Product:* ' + data.product + '\n' +
+      '*Quantity:* ' + (data.quantity || 'N/A') + '\n' +
+      '*Message:* ' + (data.message || 'N/A')
+    );
+    window.open('https://wa.me/' + waNum + '?text=' + waMsg, '_blank');
+    this.reset();
+    alert('Thank you! Your inquiry has been submitted. We will contact you shortly.');
+  });
+
+  // AOS
+  AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 60 });
+
+  // Init
+  window.addEventListener('load', () => {
+    document.getElementById('preloader').classList.add('hidden');
+    renderProducts();
+    renderGallery();
+    setTimeout(animateCounters, 400);
+    setTimeout(() => AOS.refresh(), 600);
+  });
+
+  // URL product param
+  if (window.location.hash.includes('?')) {
+    const params = new URLSearchParams(window.location.hash.split('?')[1]);
+    const product = params.get('product');
+    if (product) document.getElementById('qProduct').value = product;
+  }
+
+  // ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.getElementById('productModal').classList.remove('active');
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+</script>
+</body>
+</html>
